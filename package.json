@@ -1,0 +1,20 @@
+{
+  "name": "grubby-galaxy",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/reposMrPerson33/grubby-galaxy#readme",
+  "bugs": {
+    "url": "https://github.com/reposMrPerson33/grubby-galaxy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reposMrPerson33/grubby-galaxy.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
