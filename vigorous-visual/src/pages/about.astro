@@ -1,4 +1,6 @@
 ---
+
+import "../styles/global.css"
 const pageTitle = "About"
 
 const identity = {
@@ -15,6 +17,13 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
+const skillColor = "crimson"
+const fontWeight = "bold";
+const skillSize = "25px"
+const titleSize = "50px"
+const textCase = "299px";
+const hoverColor = "lightblue"
+
 ---
 
 <html lang="en">
@@ -24,6 +33,16 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{skillColor, fontWeight, textCase, hoverColor, skillSize, titleSize}}>
+			h1 { color:#18e; font-size: var(--titleSize)}
+			.skill {
+				color:var(--skillColor); 
+				font-weight: var(--fontWeight); 
+				font-size: var(--skillSize);
+			}
+			.skill:hover { color: var(--hoverColor); translate: 25px;
+			transition: 1s all ease-in}
+		</style>
 	</head>
 	<body>
 
@@ -49,7 +68,7 @@ const goal = 3;
 
 		<p>Habilidades:</p>
 		<ul>
-			{skills.map( (skill) => <li>{skill}</li>)}
+			{skills.map( (skill) => <li class="skill">{skill}</li>)}
 		</ul>
 
 		<p>Metas:</p>
