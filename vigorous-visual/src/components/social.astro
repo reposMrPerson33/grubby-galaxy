@@ -1,0 +1,21 @@
+---
+const {platform, username} = Astro.props;
+const hrefColor = "#fff";
+
+---
+<meta name="generator" content={Astro.generator} />
+<style define:vars={{hrefColor}}>
+    a{
+        color: var(--hrefColor);
+        transition: .2s ease-in;
+        text-decoration: none;
+        text-shadow: .5px .5px #000;
+    }
+    a:hover{
+        color: #04f;
+        transition: 1s all;
+        text-decoration: line-through #516fa7 2px;
+    }
+</style>
+
+<a href=`https://${platform}.com/${username}`>{platform}</a>

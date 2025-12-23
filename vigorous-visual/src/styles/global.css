@@ -1,5 +1,4 @@
 * {
-    padding-left: 15px;
   }
 
   html {
@@ -14,4 +13,19 @@
   h1 {
     color: #000;
 
+  }
+
+  footer{
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  a{
+    margin-left: 25px;
+    font-weight: bold;
+  }
+  svg{
+    width: 20px;
+    margin: 0 4px;
+    color: #18e;
   }
