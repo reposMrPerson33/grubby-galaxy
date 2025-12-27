@@ -1,31 +1,23 @@
 ---
-import Nav from "../components/Nav.astro";
+import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
+import BaseLayout from "../layouts/baseLayout.astro";
 import "../styles/global.css";
 
-const pageTitle = "Blog"
+
+const pageTitle = "Blog";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
+<BaseLayout pageTitle={pageTitle}>
+	<h2>subtitulo Blog</h2>
+	<p>Bitácora del aprendizaje con Astro</p>
 
-		<Nav />
-		<h1>{pageTitle}</h1>
-		<p>Bitácora del aprendizaje con Astro</p>
-
-		<ul>
-			<li><a href="/posts/post-2">Publicación 1</a></li>
-			<li><a href="/posts/post-2">Publicación 2</a></li>
-			<li><a href="/posts/post-3">Publicación 3</a></li>
-		</ul>
-
-		<Footer />
-	</body>
-</html>
+	<ul>
+		<li><a href="/posts/post-2">Publicación 1</a></li>
+		<li><a href="/posts/post-2">Publicación 2</a></li>
+		<li><a href="/posts/post-3">Publicación 3</a></li>
+	</ul>
+</BaseLayout>
+<script>
+	import "../scripts/menu.js";
+</script>

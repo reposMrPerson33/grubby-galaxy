@@ -1,80 +1,72 @@
 ---
-import Nav from "../components/Nav.astro";
+import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
-import "../styles/global.css"
-const pageTitle = "About"
+import BaseLayout from "../layouts/baseLayout.astro";
+import "../styles/global.css";
+const pageTitle = "About";
 
 const identity = {
 	firstName: "Jake",
 	born: "Mesopotamia",
 	occupation: "Tribu recruiter",
-	hobbies: ["Futbol", "Sky landing", "Cherokee"]
-}
+	hobbies: ["Futbol", "Sky landing", "Cherokee"],
+};
 
 const skills = ["Paint", "Mines", "2 cards Poker", "panning"];
-
 
 const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = "crimson"
+const skillColor = "crimson";
 const fontWeight = "bold";
-const skillSize = "25px"
-const titleSize = "50px"
+const skillSize = "25px";
+const titleSize = "50px";
 const textCase = "299px";
-const hoverColor = "lightblue"
-
+const hoverColor = "lightblue";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style define:vars={{skillColor, fontWeight, textCase, hoverColor, skillSize, titleSize}}>
-			h1 { color:#18e; font-size: var(--titleSize)}
-			.skill {
-				color:var(--skillColor); 
-				font-weight: var(--fontWeight); 
-				font-size: var(--skillSize);
+<BaseLayout pageTitle={pageTitle}>
+	<h2>Subitutlo</h2>
+	<p>
+		Estoy trabajando en el tutorial introductorio de Astro. Esta es la
+		segunda página de mi sitio web, ¡y es la primera que he construido
+		yo mismo!
+	</p>
+	<p>
+		Este sitio se irá actualizando a medida que vaya completando más
+		partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va
+		mi viaje!
+	</p>
+	<p>Datos:</p>
+	<ul>
+		<li>Nombre: {identity.firstName}</li>
+		<li>
+			Criado en {identity.born}, trabajo como {identity.occupation}.
+				</li>
+			{
+				identity.hobbies.length >= 2 && (
+					<li>
+						Aficiones {identity.hobbies[0]} y {identity.hobbies[1]}
+					</li>
+				)
 			}
-			.skill:hover { color: var(--hoverColor); translate: 25px;
-			transition: 1s all ease-in}
-		</style>
-	</head>
-	<body>
-
-		<Nav />
-		<h1>{pageTitle}</h1>
-
-		<h2>... ¡y mi nuevo sitio Astro!</h2>
-
-		<p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
-	
-		<p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
-
-		<p>Datos:</p>
-		<ul>
-			<li>Nombre: {identity.firstName}</li>
-			<li>Criado en {identity.born}, trabajo como {identity.occupation}.</li>
-			{identity.hobbies.length >= 2 &&
-			<li>Aficiones {identity.hobbies[0]} y {identity.hobbies[1]}</li>
-			}
-		</ul>
-
+	</ul>		
 		<p>Habilidades:</p>
-		<ul>
-			{skills.map( (skill) => <li class="skill">{skill}</li>)}
-		</ul>
-
-		<p>Metas:</p>
-		{happy && <p>Aguante Astro!</p>}
-		{finished && <p>Tutorial Terminado!</p>}
-		{goal === 3 ? <p>Objetivo: Terminar en 3 días</p> : <p>No hace falta terminar en 3 días</p>}
-
-		<Footer />
-	</body>
-</html>
+	<ul>
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
+	</ul>
+	<p>Metas:</p>
+	{happy && <p>Aguante Astro!</p>}
+	{finished && <p>Tutorial Terminado!</p>}
+	{
+		goal === 3 ? (
+			<p>Objetivo: Terminar en 3 días</p>
+		) : (
+			<p>No hace falta terminar en 3 días</p>
+		)
+	}
+</BaseLayout>
+		<script>
+			import "../scripts/menu.js";
+		</script>

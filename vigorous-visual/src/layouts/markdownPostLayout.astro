@@ -1,0 +1,62 @@
+---
+import Footer from "../components/footer.astro"
+const { frontmatter} = Astro.props;
+
+---
+
+<meta charset="utf-8" />
+<style>
+    *{margin: 0;}
+    body{
+
+        /* ajustar fondo a la pantalla */
+        background-image: url("/public/rose.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        
+    }
+    div{
+        display: inline-block;
+
+        
+    }
+    .author, .date, .description{
+        color: #000; 
+        background: rgb(255, 255, 255); 
+        font-weight: bold;
+        border: 2px solid black;
+        border-radius: 0px;
+        box-shadow: 6px 4px rgb(0,0,0,.2);
+        margin: 5px 0 5px 25px;
+        padding-left: 10px;
+        transition: 3s all ease-in;
+    }
+    .author:hover, .date:hover, .description:hover{
+        color: #ffffff; 
+        background: rgba(0, 0, 0, .4); 
+        font-weight: bold;
+        padding: 0 0 80px 15px;
+        border: 2px double #18e;
+        border-radius: 10px;
+        box-shadow: 6px 4px rgb(0,0,0,.6);
+        margin: 5px 0 25px 25px;
+        transition: 1.5s all ease-out
+    }
+    
+</style>
+
+    <img src={frontmatter.image} width="300" alt={frontmatter.image}/>
+
+<div>
+    <p class="author">{frontmatter.author}</p>
+
+    <p class="date">
+        publicado el: {frontmatter.pubDate.toString().slice(0, 10)}
+    </p>
+    <p class="description">{frontmatter.description}</p>
+</div>
+
+<slot />
+

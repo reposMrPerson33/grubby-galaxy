@@ -1,31 +1,109 @@
-* {
-  }
+/* * {} */
 
-  html {
+html {
 
-    font-family: sans-serif;
-  }
-  
-  body {
-    background-image: linear-gradient( white, grey);
-  }
-  
+  font-family: sans-serif;
+}
+
+body {
+  background-image: linear-gradient(white, grey);
+}
+
+/* estilos de la barra de navegación*/
+
+.menu {
+  background-color: #0d0950;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.nav-links {
+  width: 100%;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #474747;
+  transition: .5s all;
+  border-radius: 20px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: #505050;
+  transition: .5s all;
+  color: #bebebe;
+  border-radius: 10px;
+}
+
   h1 {
     color: #000;
 
   }
 
-  footer{
+  footer {
     margin: 0;
     padding: 0;
     display: flex;
   }
-  a{
+
+  a {
     margin-left: 25px;
     font-weight: bold;
   }
-  svg{
+
+  svg {
     width: 20px;
     margin: 0 4px;
     color: #18e;
   }
+
+  :has(.menu[aria-expanded="true"]) .nav-links {
+    display: unset;
+}
+
+h1 {
+  color: #18e;
+  font-size: var(--titleSize);
+}
+.skill {
+  color: var(--skillColor);
+  font-weight: var(--fontWeight);
+  font-size: var(--skillSize);
+}
+.skill:hover {
+  color: var(--hoverColor);
+  translate: 25px;
+  transition: 1s all ease-in;
+}
+
+  /* Media query */
+ /* @media screen and (max-width: 636px) {
+  .nav-links {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+
+  .menu {
+    display: none;
+  }
+} */
