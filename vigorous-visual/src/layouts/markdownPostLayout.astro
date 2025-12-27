@@ -1,24 +1,23 @@
 ---
-import Footer from "../components/footer.astro"
+import BaseLayout from "./baseLayout.astro"
 const { frontmatter} = Astro.props;
 
 ---
 
-<meta charset="utf-8" />
+<BaseLayout pageTitle={frontmatter.title}>
+
 <style>
     *{margin: 0;}
     body{
-
         /* ajustar fondo a la pantalla */
         background-image: url("/public/rose.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         height: 100vh;
-        
     }
     div{
-        display: inline-block;
+        display: inline-flex
 
         
     }
@@ -46,17 +45,13 @@ const { frontmatter} = Astro.props;
     }
     
 </style>
-
-    <img src={frontmatter.image} width="300" alt={frontmatter.image}/>
-
 <div>
-    <p class="author">{frontmatter.author}</p>
-
     <p class="date">
         publicado el: {frontmatter.pubDate.toString().slice(0, 10)}
     </p>
+    <p class="author">{frontmatter.author}</p>
     <p class="description">{frontmatter.description}</p>
 </div>
-
 <slot />
+</BaseLayout>
 

@@ -9,11 +9,17 @@ image:
     alt: 'El logotipo de Astro sobre un fondo oscuro con un brillo rosado.'
 tags: ["astro", "bloguear", "aprender en público"]
 ---
-
+<style>
+    *{color: #fff; font-weight: bold;}
+    div{ 
+        background-color: rgba(255,255,255,.2);
+        border-radius: 1px;
+        border: 1px solid black;
+        margin: 15px;
+    }
+</style>
 <!-- SLOT -->
-# Mi primera publicación en el blog
-
-
+<div>
 ¡Bienvenido a mi _nuevo blog_ sobre el aprendizaje de Astro! Aquí, voy a compartir mi viaje de aprendizaje a medida que construyo un nuevo sitio web.
 
 ## Lo que he conseguido
@@ -27,3 +33,5 @@ tags: ["astro", "bloguear", "aprender en público"]
 ## Próximos pasos
 
 Terminaré el tutorial de Astro, y luego seguiré añadiendo más publicaciones. Mira este espacio para más por venir.
+
+</div>
