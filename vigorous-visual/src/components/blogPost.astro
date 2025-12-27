@@ -1,0 +1,11 @@
+ ---
+const {title, url} = Astro.props
+ ---
+
+<!-- ultima actualizacion de cada entrada -->
+<!-- post.map( (post) => <LastUpdated date={postMessage.frontmatter.pubDate}/>) -->
+
+
+<li>
+    <a href="{url}">{title}</a>
+</li>
